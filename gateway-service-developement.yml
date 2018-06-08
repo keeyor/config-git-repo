@@ -1,0 +1,75 @@
+server:
+  port: ${PORT:8443}
+  ssl:
+    key-store-type: JKS
+    key-store: classpath:dimos.jks
+    key-store-password: mgs1971
+    key-alias: dimos.p12
+  servlet:
+    context-path: /dmms
+spring:
+  session:
+    store-type: redis
+  redis:
+    host: redis-service
+    port: 6379
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+    restart:
+      enabled: true
+zuul:
+  routes:
+    auth:
+      path: /auth/**
+      sensitiveHeaders:
+      serviceId: auth-server
+    videolecture:
+      path: /api/videolecture/**
+      serviceId: videolecture-service
+      sensitive-headers:
+    institution:
+      path: /api/institution/**
+      serviceId: institution-service
+      sensitive-headers:
+    sa:
+      path: /sa/**
+      serviceId: admin-service
+      sensitive-headers:
+    user:
+      path: /api/user/**
+      sensitive-headers:
+      serviceId: user-service
+
+ribbon:
+  eureka:
+    enabled: true
+    
+    
+#for docker --> redis-service , discovery-service
+#host: famous-penguin-redis-master
+#port: 6379
+#host: 192.168.99.100
+#port: 32768
+#security:
+#  oauth2:
+#    client:
+#      access-token-uri: https://dimos.med.uoa.gr:8443/dmms/auth/oauth/token
+#      user-authorization-uri: https://dimos.med.uoa.gr:8443/dmms/auth/oauth/authorize
+#      clientId: acme
+#      clientSecret: acmesecret
+#    resource:
+#      user-info-uri: https://dimos.med.uoa.gr:8443/dmms/auth/user
+#      prefer-token-info: false
+#proxy:
+#  auth:
+#    routes:
+#      videolecture: oauth2
+#      institution: oauth2
+
