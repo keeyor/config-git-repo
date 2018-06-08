@@ -51,25 +51,3 @@ ribbon:
   eureka:
     enabled: true
     
-    
-#for docker --> redis-service , discovery-service
-#host: famous-penguin-redis-master
-#port: 6379
-#host: 192.168.99.100
-#port: 32768
-#security:
-#  oauth2:
-#    client:
-#      access-token-uri: https://dimos.med.uoa.gr:8443/dmms/auth/oauth/token
-#      user-authorization-uri: https://dimos.med.uoa.gr:8443/dmms/auth/oauth/authorize
-#      clientId: acme
-#      clientSecret: acmesecret
-#    resource:
-#      user-info-uri: https://dimos.med.uoa.gr:8443/dmms/auth/user
-#      prefer-token-info: false
-#proxy:
-#  auth:
-#    routes:
-#      videolecture: oauth2
-#      institution: oauth2
-
