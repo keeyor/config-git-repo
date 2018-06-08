@@ -13,7 +13,6 @@ spring:
   redis:
     host: localhost
     port: 6379
-
 logging:
   level:
     ROOT: INFO
@@ -46,7 +45,6 @@ zuul:
       path: /api/user/**
       sensitive-headers:
       serviceId: user-service
-
 ribbon:
   eureka:
     enabled: true
