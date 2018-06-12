@@ -8,7 +8,22 @@ spring:
     level:
       org.springframework: WARN
       org.hibernate: WARN
+  session:
+    store-type: redis
+  redis:
+    host: 192.168.99.100
+    port: 6379
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
 
 ribbon:
   eureka:
     enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["*"]
