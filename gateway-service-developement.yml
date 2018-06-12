@@ -48,4 +48,7 @@ zuul:
 ribbon:
   eureka:
     enabled: true
-    
+
+eureka.client.registerWithEureka: false
+
+mongourl: 195.134.115.31
