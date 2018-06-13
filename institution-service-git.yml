@@ -19,6 +19,6 @@ eureka:
 
 odc:
   mongodb:
-    url: localhost
+    url: mongodb-server
     port: 27017
     collection: i3Delos
