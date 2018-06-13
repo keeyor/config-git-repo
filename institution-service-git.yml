@@ -16,7 +16,7 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
- 
+    
  odc:
   mongodb:
     url: mongodb-server
