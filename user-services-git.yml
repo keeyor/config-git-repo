@@ -30,6 +30,6 @@ management:
         
  odc:
   mongodb:
-    url: mongodb-server
+    url: localhost
     port: 27017
     collection: i3Delos
