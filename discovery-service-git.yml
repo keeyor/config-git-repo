@@ -1,5 +1,1 @@
 eureka.client.registerWithEureka: false
-spring:
-  cloud:
-    config:
-      uri: http://config-service:8888
