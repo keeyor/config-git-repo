@@ -1,3 +1,4 @@
+host: dimos.med.uoa.gr
 server:
   port: ${PORT:8443}
   ssl:
@@ -11,12 +12,13 @@ spring:
   session:
     store-type: redis
   redis:
-    host: 192.168.99.100
+    host: redis-server
     port: 6379
 logging:
   level:
     ROOT: INFO
     org.springframework.web: DEBUG
+
 management:
   endpoint:
     shutdown:
@@ -51,4 +53,23 @@ ribbon:
 
 eureka.client.registerWithEureka: false
 
-mongourl: 195.134.115.31
+odc:
+  ldap:
+      server: ldap-server
+      port: 8389
+      connection: ldap://${odc.ldap.server}:${odc.ldap.port}/dc=springframework,dc=org
+      dn-Patterns: uid={0},ou=people
+      group-search-base: ou=groups
+      password-attribute: userPassword
+  mongodb:
+    url: mongodb-server
+    port: 27017
+    collection: i3Delos
+  cas:
+    service: https://${host}:${server.port}${server.servlet.context-path}/cas/login
+    key: casAuthProviderKey
+    server:
+     saml11-ticker-validator: https://login.uoa.gr/
+     filter-processes-url: /cas/login
+     login-url: https://login.uoa.gr/login
+     cas-server-url-prefix: https://login.uoa.gr/
