@@ -28,7 +28,7 @@ management:
       exposure:
         include: ["*"]
 
- odc:
+odc:
   mongodb:
     url: mongodb-server
     port: 27017
