@@ -12,11 +12,14 @@ spring:
 ribbon:
   eureka:
     enabled: true
+
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
-
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8761/eureka/
 odc:
   mongodb:
     url: mongodb-server
