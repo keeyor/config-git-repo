@@ -57,8 +57,12 @@ ribbon:
     enabled: true
 
 eureka:
- client:
-  registerWithEureka: false
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8761/eureka/
 
 odc:
   ldap:
