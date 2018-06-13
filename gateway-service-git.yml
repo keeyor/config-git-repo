@@ -14,10 +14,15 @@ spring:
   redis:
     host: redis-docker-server
     port: 6379
-logging:
-  level:
-    ROOT: INFO
-    org.springframework.web: DEBUG
+  logging:
+    level:
+      ROOT: INFO
+      org.springframework.web: DEBUG
+  data:
+    mongodb:
+      database: i3Delos
+      port: 27017
+      host: mongodb-server
 
 management:
   endpoint:
@@ -63,10 +68,6 @@ odc:
       dn-Patterns: uid={0},ou=people
       group-search-base: ou=groups
       password-attribute: userPassword
-  mongodb:
-    url: mongodb-server
-    port: 27017
-    collection: i3Delos
   cas:
     service: https://${host}:${server.port}${server.servlet.context-path}/cas/login
     key: casAuthProviderKey
