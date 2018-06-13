@@ -8,7 +8,12 @@ spring:
     level:
       org.springframework: WARN
       org.hibernate: WARN
-
+  data:
+    mongodb:
+      database: i3Delos
+      port: 27017
+      host: mongodb-server
+      
 ribbon:
   eureka:
     enabled: true
