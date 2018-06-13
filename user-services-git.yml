@@ -18,7 +18,9 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
-
+  client:
+    serviceUrl:
+      defaultZone : http://discovery-service:8761/eureka/,http://localhost:8761/eureka/
 ribbon:
   eureka:
     enabled: true
@@ -31,6 +33,6 @@ management:
       
 odc:
   mongodb:
-    url: localhost
+    url: mongodb-server
     port: 27017
     collection: i3Delos
