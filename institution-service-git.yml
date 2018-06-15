@@ -13,10 +13,6 @@ spring:
       database: i3Delos
       port: 27017
       host: mongodb-server
-      
-ribbon:
-  eureka:
-    enabled: true
 
 eureka:
   instance:
