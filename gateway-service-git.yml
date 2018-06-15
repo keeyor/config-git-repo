@@ -55,9 +55,6 @@ zuul:
       path: /api/user/**
       sensitive-headers:
       serviceId: user-services
-ribbon:
-  eureka:
-    enabled: true
 
 eureka:
   instance:
