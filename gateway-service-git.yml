@@ -31,6 +31,9 @@ management:
     restart:
       enabled: true
 zuul:
+  host:
+    socket-timeout-millis: 2000
+    connect-timeout-millis: 3000
   routes:
     auth:
       path: /auth/**
