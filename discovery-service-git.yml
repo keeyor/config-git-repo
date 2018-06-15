@@ -1,1 +1,5 @@
-eureka.client.registerWithEureka: false
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    server: waitTimeInMsWhenSyncEmpty: 0
